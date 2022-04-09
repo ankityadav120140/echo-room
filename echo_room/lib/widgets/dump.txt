@@ -1,0 +1,86 @@
+
+void startTimer() {
+const oneSec = Duration(seconds: 1);
+_timer = Timer.periodic(
+oneSec,
+(Timer timer) {
+if (_start == 0) {
+setState(() {
+_play = false;
+timer.cancel();
+});
+} else {
+setState(() {
+_start--;
+});
+}
+},
+);
+}
+
+// assetsAudioPlayer.open(
+//   Audio(music),
+//   loopMode: LoopMode.single,
+//   showNotification: true,
+// );
+
+RaisedButton(
+onPressed: () {
+startTimer();
+},
+child: Text("start"),
+),
+Text("$_start"),
+// gradient: LinearGradient(
+              //   begin: Alignment.topCenter,
+              //   end: Alignment.bottomRight,
+              //   // ignore: prefer_const_literals_to_create_immutables
+              //   stops: [
+              //     0.1,
+              //     0.5,
+              //   ],
+              //   colors: const [
+              //     Colors.cyan,
+              //     Colors.white,
+              //   ],
+              // ),
+              void initState() {
+    super.initState();
+    controller = CountdownTimerController(endTime: endTime, onEnd: onEnd);
+  }
+  // if (controller1.isAnimating) {
+                        //   controller1.stop();
+                        // } else {
+                        //   controller1.reverse(
+                        //     from: controller1.value == 0
+                        //         ? 1.0
+                        //         : controller1.value,
+                        //   );
+                        // }
+// GestureDetector(
+                      //   onTap: () {
+                      //     controller1.reset();
+                      //     setState(() {
+                      //       isPlaying = false;
+                      //     });
+                      //   },
+                      //   child: Container(
+                      //     decoration: BoxDecoration(
+                      //       borderRadius: BorderRadius.all(
+                      //         Radius.circular(40),
+                      //       ),
+                      //       border: Border.all(
+                      //         width: 3,
+                      //         color: Colors.cyan,
+                      //         style: BorderStyle.solid,
+                      //       ),
+                      //     ),
+                      //     padding: EdgeInsets.all(10),
+                      //     child: Text(
+                      //       "Reset",
+                      //       style: TextStyle(
+                      //         fontSize: 20,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
